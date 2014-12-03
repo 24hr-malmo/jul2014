@@ -63,7 +63,7 @@ gulp.task('start', function() {
 
 // Task to copy the correct configs to the right place depending on environment
 // This task migth need ot be split up later and part of a common deployment scripts package
-gulp.task('setup', function() {
+gulp.task('config', function() {
 
     // Setup config for front end server
     var environment = gutil.env.env || 'development';
