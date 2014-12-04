@@ -1,0 +1,11 @@
+body {
+  background-color: #fff;
+}
+.ornament {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-out;
+          transition: opacity 0.5s ease-out;
+}
+.ornament-active {
+  opacity: 1;
+}

@@ -9,57 +9,28 @@ var shell = require('gulp-shell');
 
 // This task makes sure all css files are pre and postprosseced
 gulp.task('css', function() {
-    gulp.src(['./public/css/*.styl'])
+    gulp.src(['./public/assets/css/*.styl'])
         .pipe(stylus())
         .pipe(prefixer())
-        .pipe(gulp.dest('./public/css'));
-});
-
-gulp.task('startwatch', function() {
-
-    livereload.listen();
-
-    gulp.watch('public/css/**/*.styl', ['css']).on('change', livereload.changed);
-
-    gulp.start('start');
-    gulp.start('css');
-
+        .pipe(gulp.dest('./public/assets/css'));
 });
 
 gulp.task('watch', function() {
-
     livereload.listen();
-
-    gulp.watch('public/css/**/*.styl', ['css']).on('change', livereload.changed);
-
-    gulp.start('css');
-
+    gulp.watch('public/assets/css/**/*.styl', ['css']).on('change', livereload.changed);
+    gulp.start('start');
 });
 
-
 gulp.task('start-front', function() {
-
-    var front = require('./lib/server');
+    var front = require('./lib/');
     front.start(function() {
         gutil.log("The Goals Frontend server started");
     });
-
 });
-
 
 gulp.task('start', function() {
-
-    // check if we should turn off security
-    var security = gutil.env.security !== "false";
-    if (!security) {
-        global.securityForApi = false;
-    }
-
     gulp.start('start-front', ['css']);
-
 });
-
-
 
 // Task to copy the correct configs to the right place depending on environment
 // This task migth need ot be split up later and part of a common deployment scripts package
