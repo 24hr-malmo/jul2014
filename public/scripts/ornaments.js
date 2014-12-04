@@ -20,17 +20,27 @@ define([ 'socket' ],function(socket) {
 
         setTimeout(function() {
 
-            var svg = '<svg><g class="ornament">\n<circle fill="#D7000A" cx="' + ornament.x + '" cy="' + ornament.y + '" r="10"></circle>\n</g></svg>';
             var svgRoot = container.querySelector('svg');
             var child = document.createElement('div');
-            child.innerHTML = svg;
-            var ornamentDom = child.querySelector('svg').firstChild;
 
+            var templateDom = document.querySelector('[data-ornament-type="' + ornament.type + '"]');
+
+            if (templateDom) {
+            var html = templateDom.innerHTML.replace(/[\n]/g, '');
+            html = html.replace(/x="\w+"/g, 'x="' + ornament.x + '"');
+            html = html.replace(/y="\w+"/g, 'y="' + ornament.y + '"');
+            child.innerHTML = html;
+
+            var ornamentDom = child.querySelector('svg');
+
+            ornamentDom.classList.add('ornament');
             svgRoot.appendChild(ornamentDom);
 
             setTimeout(function() {
                 ornamentDom.classList.add('ornament-active');
             }, 10);
+
+            }
 
         }, index * 50);
 

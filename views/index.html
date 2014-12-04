@@ -5,22 +5,37 @@
     <title>24HR JUL 2014</title>
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
- 
-    <style>
-        #svg-tree{
-            width: 100%;
-            min-width: 100%;
-        }
-    </style>
 </head>
 <body>
 
-    <button data-button-add>ADD</button>
-    <div id="tree">
-        {{=this.image('./public/assets/svg/gran.svg')}}
+
+    <div class="box">
+
+        <div class="instructions">
+            <h1>24HR Jul</h1>
+            <h2>SMSa någotav följande <br/>till 076-686 14 87:</h2>
+            <ul>
+                <li>foo</li>
+                <li>bar</li>
+                <li>baq</li>
+                <li>naz</li>
+            </ul>
+        </div>
+
+        <div id="tree">
+            {{=this.image('./public/assets/svg/gran.svg')}}
+        </div>
+
     </div>
 
+    <div id="ornament-templates">
+        <div data-ornament-type="foo">{{=this.image('./public/assets/svg/ornament1.svg')}}</div>
+        <div data-ornament-type="bar">{{=this.image('./public/assets/svg/ornament2.svg')}}</div>
+        <div data-ornament-type="baq">{{=this.image('./public/assets/svg/ornament3.svg')}}</div>
+        <div data-ornament-type="baz">{{=this.image('./public/assets/svg/ornament4.svg')}}</div>
+    </div>
 
     <script data-main="/scripts/bootstrap-main" src="/scripts/lib/require.js"></script>    
+
 </body>
 </html>
