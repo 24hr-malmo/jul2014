@@ -35,6 +35,9 @@ define([ 'socket' ],function(socket) {
 
             ornamentDom.classList.add('ornament');
             svgRoot.appendChild(ornamentDom);
+            ornamentDom.addEventListener('mouseover', function() {
+                console.log(ornament);
+            }, false);
 
             setTimeout(function() {
                 ornamentDom.classList.add('ornament-active');
