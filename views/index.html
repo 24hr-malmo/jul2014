@@ -13,19 +13,30 @@
 
         <div class="instructions">
             <h1>24HR Jul</h1>
-            <h2>SMSa något av följande <br/>till 076-686 14 87:</h2>
-            <ul>
-                <li>foo</li>
-                <li>bar</li>
-                <li>baq</li>
-                <li>baz</li>
-            </ul>
+            <div class="intro">
+                SMSa 
+                <a href="sms:+46766861487?body=foo">foo</a>,
+                <a href="sms:+46766861487?body=bar">bar</a>,
+                <a href="sms:+46766861487?body=baq">baq</a> eller 
+                <a href="sms:+46766861487?body=baz">baz</a>
+                till
+                <a href="sms:+46766861487" class="no-wrap">076-686 14 87</a>.
+            </div>
         </div>
 
         <div id="tree">
             {{=this.image('./public/assets/svg/gran.svg')}}
         </div>
 
+        <div id="tack-till" class="flex-center">
+            <h2>Tack till:</h2>
+            <ul data-thank-you-list> </ul>
+        </div>
+
+    </div>
+
+    <div class="bubble" data-bubble>
+        <div class="name" data-name>Lorem</div>
     </div>
 
     <div id="ornament-templates">

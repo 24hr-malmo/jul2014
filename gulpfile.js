@@ -28,8 +28,12 @@ gulp.task('start-front', function() {
     });
 });
 
+gulp.task('build', function() {
+    gulp.start('css');
+});
+
 gulp.task('start', function() {
-    gulp.start('start-front', ['css']);
+    gulp.start('start-front', ['build']);
 });
 
 // Task to copy the correct configs to the right place depending on environment

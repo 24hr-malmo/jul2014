@@ -1,5 +1,9 @@
 body {
-  background-color: #fff;
+  font-size: 62.5%;
+  line-height: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  background-color: #eb3232;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -9,21 +13,88 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 2rem;
+  padding: 2rem 2rem;
+  padding-left: 4rem;
+}
+a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 6rem;
+  line-height: 6.2rem;
+  padding: 0;
+  margin: 0;
+  color: #3c8d0d;
 }
 h2 {
-  line-height: 1.8rem;
+  padding-top: 1rem;
+  line-height: 2.2rem;
+  font-size: 1.8rem;
+}
+.name {
+  font-size: 1rem;
+}
+.flex-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+#tack-till {
+  display: none;
+}
+#tack-till ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#tack-till ul li {
+  font-size: 1.4rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.6rem;
+}
+.intro {
+  padding-top: 1rem;
+  line-height: 2.2rem;
+  font-size: 1.8rem;
+}
+.no-wrap {
+  white-space: nowrap;
 }
 .instructions {
   -webkit-box-flex: 0.5;
   -webkit-flex: 0.5;
       -ms-flex: 0.5;
           flex: 0.5;
-  color: #666;
-  padding: 0 2rem 2rem;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  padding: 0 1rem 1rem 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 #tree {
   -webkit-box-flex: 1;
@@ -46,4 +117,53 @@ h2 {
 }
 .ornament-active {
   opacity: 1;
+}
+.bubble {
+  -webkit-transition: opacity 0.2s ease-out;
+          transition: opacity 0.2s ease-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+.bubble.modifier-active {
+  opacity: 1;
+}
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 700px) {
+  .box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 2rem;
+  }
+  h1,
+  .intro {
+    text-align: center;
+  }
+  #tack-till {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .instructions {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  * {
+    outline: none;
+  }
 }

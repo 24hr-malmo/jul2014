@@ -1,6 +1,7 @@
 define([ 'socket' ],function(socket) {
 
     var container;
+    var bubbleActive = false;
     
     function init(dom) {
         container = dom;
@@ -14,9 +15,39 @@ define([ 'socket' ],function(socket) {
         }
     }
 
+    function showBubble(ornament) {
+        bubbleDom.querySelector('[data-name]').innerHTML = ornament.name;
+        bubbleDom.classList.add('modifier-active');
+        bubbleActive = true;
+    }
+
+    function hideBubble() {
+        bubbleDom.classList.remove('modifier-active');
+        bubbleActive = false;
+
+    }
+
+
+    var bubbleDom = document.querySelector('[data-bubble]');
+
+    document.addEventListener('mousemove', function(e) {
+
+        var delta = 10;
+        bubbleDom.style.top = (e.pageY + delta) + 'px';
+        bubbleDom.style.left = (e.pageX + delta) + 'px';
+
+    }, false);
+
+
     function render(ornament, index) {
 
         index = index || 1;
+
+        // add to thank you list
+        var listRoot = document.querySelector('[data-thank-you-list]');
+        var liDom = document.createElement('li');
+        liDom.innerHTML = ornament.name;
+        listRoot.appendChild(liDom);
 
         setTimeout(function() {
 
@@ -26,22 +57,27 @@ define([ 'socket' ],function(socket) {
             var templateDom = document.querySelector('[data-ornament-type="' + ornament.type + '"]');
 
             if (templateDom) {
-            var html = templateDom.innerHTML.replace(/[\n]/g, '');
-            html = html.replace(/x="\w+"/g, 'x="' + ornament.x + '"');
-            html = html.replace(/y="\w+"/g, 'y="' + ornament.y + '"');
-            child.innerHTML = html;
+                var html = templateDom.innerHTML.replace(/[\n]/g, '');
+                html = html.replace(/x="\w+"/g, 'x="' + ornament.x + '"');
+                html = html.replace(/y="\w+"/g, 'y="' + ornament.y + '"');
+                child.innerHTML = html;
 
-            var ornamentDom = child.querySelector('svg');
+                var ornamentDom = child.querySelector('svg');
 
-            ornamentDom.classList.add('ornament');
-            svgRoot.appendChild(ornamentDom);
-            ornamentDom.addEventListener('mouseover', function() {
-                console.log(ornament);
-            }, false);
+                ornamentDom.classList.add('ornament');
+                svgRoot.appendChild(ornamentDom);
+                ornamentDom.addEventListener('mouseover', function() {
+                    showBubble(ornament);
+                }, false);
 
-            setTimeout(function() {
-                ornamentDom.classList.add('ornament-active');
-            }, 10);
+                ornamentDom.addEventListener('mouseleave', function() {
+                    hideBubble();
+                }, false);
+
+
+                setTimeout(function() {
+                    ornamentDom.classList.add('ornament-active');
+                }, 10);
 
             }
 

@@ -1,22 +1,74 @@
+christmasRed = rgb(235,50,50)
+christmasGreen = rgb(60,141,13)
+
 body
-    background-color white
+    font-size 62.5%
+    line-height 1.5rem
+    -webkit-font-smoothing antialiased
+    height 100%
+    background-color christmasRed
     margin 0
     padding 0
     font-family sans-serif
 
 .box    
     display flex
-    padding 2rem
+    padding 2rem 2rem
+    padding-left 4rem
+
+a
+    color rgba(255, 255, 255, .6)
+    text-decoration none
 
 h1
-    font-size 4rem
+    font-size 6rem
+    line-height 6.2rem
+    padding 0
+    margin 0
+    color christmasGreen
+
 h2
-    line-height 1.8rem
+    padding-top 1rem
+    line-height 2.2rem
+    font-size 1.8rem
+
+.name
+    font-size 1rem
+
+.flex-center
+    display flex
+    flex-direction column
+    justify-content center
+    text-align center
+
+#tack-till
+    display none 
+    ul
+        list-style none
+        padding 0
+        margin 0
+        li
+            font-size 1.4rem
+            padding-bottom .5rem
+            line-height 1.6rem
+.intro
+    padding-top 1rem
+    line-height 2.2rem
+    font-size 1.8rem
+
+.no-wrap
+    white-space nowrap
 
 .instructions
     flex .5
-    color #666
-    padding 0 2rem 2rem
+    color white
+    font-weight bold
+    font-size 1.4rem
+    line-height 1.6rem
+    padding 0 1rem 1rem 0
+    justify-content center
+    display flex
+    flex-direction column
 
 #tree
     flex 1
@@ -35,3 +87,37 @@ h2
 
 .ornament-active
     opacity 1
+
+.bubble
+    transition opacity .2s ease-out 
+    opacity 0 
+    position absolute
+    top 0
+    left 0
+    background-color white
+    padding .5rem
+    border-radius 4px
+    box-shadow 2px 2px 2px rgba(0,0,0,.2)
+
+    &.modifier-active
+        opacity 1
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 700px)
+    .box
+        flex-direction column
+        justify-content center
+        padding 2rem
+
+    h1, .intro
+        text-align center
+
+    #tack-till
+        display flex
+
+    .instructions 
+        flex 1
+
+    *
+        outline none
+
