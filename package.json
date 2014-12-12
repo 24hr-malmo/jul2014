@@ -27,5 +27,8 @@
     "zmq": "^2.8.0",
     "zonar": "^0.5.9",
     "es6-promise": "^2.0.0"
+  },
+  "devDependencies": {
+    "request": "^2.49.0"
   }
 }

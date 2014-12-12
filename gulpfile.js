@@ -5,6 +5,8 @@ var livereload = require('gulp-livereload');
 var prefixer = require('gulp-autoprefixer');
 var fs = require('fs');
 var path = require('path');
+var async = require('async');
+var request = require('request');
 var shell = require('gulp-shell');
 
 // This task makes sure all css files are pre and postprosseced
@@ -36,6 +38,38 @@ gulp.task('start', function() {
     gulp.start('start-front', ['build']);
 });
 
+gulp.task('sms', function() {
+
+
+    var server = require('./lib/');
+    server.start(function() {
+ 
+    var amount = gutil.env.amount || 10;
+
+    var amountList = [];
+    for(var i = 0; i < amount; i++){ 
+        amountList.push(1);
+    }
+
+    async.eachSeries(amountList, function(item, next) {
+
+        gutil.log('try to send one');    
+        request.post('http://localhost:8787/46elks/sms', {form: {from:'+46707776018', message: 'foo'}}, function(err) {
+
+            gutil.log('done!');
+            next(err);
+        });
+
+    }, function(err) {
+        if (err) gutil.log(err);
+        //process.exit();                
+    });
+
+    });
+});
+
+
+
 // Task to copy the correct configs to the right place depending on environment
 // This task migth need ot be split up later and part of a common deployment scripts package
 gulp.task('config', function() {
@@ -47,7 +81,7 @@ gulp.task('config', function() {
     fs.exists('./configs/' + environment + '.js', function(exists) {
         if (exists) {
             fs.createReadStream('./configs/' + environment + '.js')
-                .pipe(fs.createWriteStream('./config.js'));
+            .pipe(fs.createWriteStream('./config.js'));
             gutil.log('Front config in enviroment "' + environment + '" copied.'); 
         }
     });
@@ -57,7 +91,7 @@ gulp.task('config', function() {
     fs.exists('./goals-glue/configs/' + environment + '.js', function(exists) {
         if (exists) {
             fs.createReadStream('./goals-glue/configs/' + environment + '.js')
-                .pipe(fs.createWriteStream('./goals-glue/config.js'));
+            .pipe(fs.createWriteStream('./goals-glue/config.js'));
             gutil.log('Glue config in enviroment "' + environment + '" copied.'); 
         }
     });

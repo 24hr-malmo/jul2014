@@ -58,14 +58,17 @@ define([ 'socket' ],function(socket) {
 
             if (templateDom) {
                 var html = templateDom.innerHTML.replace(/[\n]/g, '');
-                html = html.replace(/x="\w+"/g, 'x="' + ornament.x + '"');
-                html = html.replace(/y="\w+"/g, 'y="' + ornament.y + '"');
+                //html = html.replace(/x="\w+"/g, 'x="' + ornament.x + '"');
+                //html = html.replace(/y="\w+"/g, 'y="' + ornament.y + '"');
                 child.innerHTML = html;
 
-                var ornamentDom = child.querySelector('svg');
+                var ornamentDom = child.querySelector('img');
 
                 ornamentDom.classList.add('ornament');
-                svgRoot.appendChild(ornamentDom);
+                ornamentDom.style.top = (ornament.yPercent / 1.2 + .1) * 100 + '%';
+                ornamentDom.style.left = (ornament.xPercent / 1.2 + .1) * 100 + '%';
+                //svgRoot.appendChild(ornamentDom);
+                container.appendChild(ornamentDom);
                 ornamentDom.addEventListener('mouseover', function() {
                     showBubble(ornament);
                 }, false);
