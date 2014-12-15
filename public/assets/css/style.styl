@@ -6,7 +6,7 @@ html
 body
     line-height 1.5rem
     font-smoothing antialiased
-    height 100%
+    min-height 100%
     background-color #1B1E22
     margin 0
     padding 0
@@ -18,20 +18,21 @@ body
 a
     color rgba(255, 255, 255, .6)
     text-decoration none
+    white-space nowrap
 
 h1
-    font-size 4rem
+    font-size 3rem
     line-height 1.2em
     padding 0
     margin 0
     color white
     font-family 'Playfair Display', serif
 
-h2
+h3
     font-weight 700
     margin .5em 0
     line-height 1.2em
-    font-size 1.5rem
+    font-size 1.3rem
 
 p
     margin .3em 0
@@ -39,15 +40,20 @@ p
     line-height 1.3em
 
     &.intro
-        padding-top 1rem
-        font-size 1.5rem
+        padding-top .5rem
+        font-size 1.3rem
         color white
 
 a
     color white
+    //text-decoration underline
 
+
+.sms-number
+    font-size 1.3rem
 .name
     font-size 1rem
+
 
 .flex-center
     display flex
@@ -62,9 +68,10 @@ a
   overflow auto
   zoom 1
 
-
-
-
+.show-mobile
+    display none
+.show-desktop
+    display initial
 .box
     display flex
     flex 1
@@ -119,10 +126,14 @@ a
     position absolute
     top 0
     left 0
+    font-weight 700
+    font-size .8rem
     background-color white
-    padding .5rem
-    border-radius 4px
-    box-shadow 2px 2px 2px rgba(0,0,0,.2)
+    line-height 1rem
+    padding 1em 1em
+    border-radius 3px
+    border-top-left-radius 0
+    box-shadow 1px 2px 3px rgba(0,0,0,.2)
 
     &.modifier-active
         opacity 1
@@ -140,7 +151,6 @@ a
     color white
     line-height 1.6rem
     flex .5
-    display flex
     justify-content center
     flex-direction column
 
@@ -153,32 +163,33 @@ a
     margin-top 40px
 
 .julpynt
-    margin 25px 0
+    margin 25px 0 15px 0
 
     a
         font-weight 700
-        padding-left 30px
-        padding-right 20px
+        //padding-left 30px
+        padding-right 28px
+        margin-right 15px
         color white
         float left
         margin-bottom .5em
         text-align left
 
         &.julgran-pynt-kula-1
-            background url(../images/pynt-list-kula-1.png) no-repeat
+            background url(../images/pynt-list-kula-1.png) no-repeat right
         &.julgran-pynt-kula-2
-            background url(../images/pynt-list-kula-2.png) no-repeat
+            background url(../images/pynt-list-kula-2.png) no-repeat right
         &.julgran-pynt-ljus
-            background url(../images/pynt-list-ljus.png) no-repeat
-            padding-left 16px
+            background url(../images/pynt-list-ljus.png) no-repeat right
+            padding-right 17px
         &.julgran-pynt-polka
-            background url(../images/pynt-list-polka.png) no-repeat
-            padding-left 16px
+            background url(../images/pynt-list-polka.png) no-repeat right
+            padding-right 17px
 
 .julklappen
     img
         width 100%
-        max-width 250px
+        max-width 300px
         margin-top 50px
 
 #juldeko-1
@@ -213,12 +224,24 @@ a
     p
         &.intro
             font-size 1.2rem
+
+    .show-mobile
+        display initial
+    .show-desktop
+        display none
+
+    .sms-number
+        text-decoration underline
+
     #tack-till
         display flex
+        padding-bottom 50px
 
     .instructions
-        padding 25px 50px
+    #tack-till
+        padding 25px 30px
         min-width 320px
+
 
     .pyntagranen
         margin-top 0
@@ -235,7 +258,7 @@ a
         display none
     #block-header-mobile
         display block
-        padding 20px 30px
+        padding 30px 30px 20px 30px
 
     #juldeko-1
         background url(../images/deco-1.png) no-repeat top right
@@ -245,17 +268,24 @@ a
         width 100px
 
     .julpynt
+        width 80%
+        margin 15px auto 15px auto
+        text-align center
+
+
         a
+            line-height 2em
+            float none
             &.julgran-pynt-kula-1
             &.julgran-pynt-kula-2
             &.julgran-pynt-ljus
             &.julgran-pynt-polka
-                padding-left 15px
-                width 50%
+                //width 50%
+                padding 5px 17px 5px 0
                 box-sizing border-box
             &.julgran-pynt-kula-1
             &.julgran-pynt-kula-2
-                padding-left 30px
+                padding-right 30px
 
     #tack-till
         display flex
