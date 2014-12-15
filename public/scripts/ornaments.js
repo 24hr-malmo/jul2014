@@ -2,7 +2,8 @@ define([ 'socket' ],function(socket) {
 
     var container;
     var bubbleActive = false;
-    
+    var isTouch = (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+
     function init(dom) {
         container = dom;
 
@@ -57,25 +58,37 @@ define([ 'socket' ],function(socket) {
             var templateDom = document.querySelector('[data-ornament-type="' + ornament.type + '"]');
 
             if (templateDom) {
+
                 var html = templateDom.innerHTML.replace(/[\n]/g, '');
-                //html = html.replace(/x="\w+"/g, 'x="' + ornament.x + '"');
-                //html = html.replace(/y="\w+"/g, 'y="' + ornament.y + '"');
                 child.innerHTML = html;
 
                 var ornamentDom = child.querySelector('img');
 
                 ornamentDom.classList.add('ornament');
-                ornamentDom.style.top = (ornament.yPercent / 1.2 + .1) * 100 + '%';
-                ornamentDom.style.left = (ornament.xPercent / 1.2 + .1) * 100 + '%';
-                //svgRoot.appendChild(ornamentDom);
+                ornamentDom.classList.add('type-' + ornament.type);
+                ornamentDom.style.top = (ornament.yPercent / 1.2 + 0.1) * 100 + '%';
+                ornamentDom.style.left = (ornament.xPercent / 1.2 + 0.1) * 100 + '%';
                 container.appendChild(ornamentDom);
-                ornamentDom.addEventListener('mouseover', function() {
-                    showBubble(ornament);
-                }, false);
 
-                ornamentDom.addEventListener('mouseleave', function() {
-                    hideBubble();
-                }, false);
+
+                if (!isTouch) {
+
+                    ornamentDom.addEventListener('mouseover', function() {
+                        showBubble(ornament);
+                    }, false);
+
+                    ornamentDom.addEventListener('mouseleave', function() {
+                        hideBubble();
+                    }, false);
+
+                } else {
+
+                    ornamentDom.addEventListener('touchstart', function() {
+                        showBubble(ornament);
+                        setTimeout(hideBubble, 5000);
+                    }, false);
+
+                }
 
 
                 setTimeout(function() {
