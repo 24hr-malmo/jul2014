@@ -82,11 +82,12 @@ define([ 'socket' ],function(socket) {
                     }, false);
 
                 } else {
-
+/*
                     ornamentDom.addEventListener('touchstart', function() {
                         showBubble(ornament);
                         setTimeout(hideBubble, 5000);
                     }, false);
+                   */
 
                 }
 

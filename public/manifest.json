@@ -1,0 +1,16 @@
+{
+  "short_name": "24HR Jul 2014",
+  "description": "Fira jul med 24HR",
+  "launch_path": "index.html",
+  "start_url": "index.html",
+  "orientation": "portrait"
+  "icons": {
+    "512": "/assets/images/icon-512.png",
+    "128": "/assets/images/icon-128.png"
+  },
+  "developer": {
+    "name": "Your name or organization",
+    "url": "http://your-homepage-here.org"
+  },
+  "default_locale": "en"
+}
