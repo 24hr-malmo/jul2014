@@ -162,19 +162,20 @@ a {
   margin-top: -4%;
 }
 .ornament.type-ljus {
-  height: 7%;
-  margin-top: -7%;
+  height: 6%;
+  margin-top: -6%;
   width: initial;
 }
 .ornament.type-polka {
-  height: 6%;
-  margin-left: -3%;
+  height: 5%;
+  margin-left: -2.5%;
   width: initial;
 }
 .ornament.type-kula1,
 .ornament.type-kula2 {
-  width: 6%;
-  margin-left: -3%;
+  width: 4%;
+  margin-left: -2%;
+  margin-top: 0;
 }
 .ornament-active {
   opacity: 1;
