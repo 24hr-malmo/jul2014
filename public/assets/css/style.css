@@ -4,7 +4,7 @@ html {
 }
 body {
   line-height: 1.5rem;
-  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   min-height: 100%;
   background-color: #1b1e22;
   margin: 0;
@@ -16,6 +16,10 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+em {
+  color: #fff;
+  font-style: normal;
 }
 a {
   color: rgba(255,255,255,0.6);
@@ -38,13 +42,13 @@ h3 {
 }
 p {
   margin: 0.3em 0;
-  color: #a0a0a0;
+  color: #cacaca;
   line-height: 1.3em;
 }
 p.intro {
   padding-top: 0.5rem;
   font-size: 1.3rem;
-  color: #fff;
+  color: #cacaca;
 }
 a {
   color: #fff;
@@ -82,7 +86,7 @@ a {
   display: none;
 }
 .show-desktop {
-  display: initial;
+  display: inline-block;
 }
 .box {
   display: -webkit-box;
@@ -136,7 +140,7 @@ a {
 }
 #tree {
   position: relative;
-  max-width: 700px;
+  max-width: 600px;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -163,7 +167,7 @@ a {
   width: initial;
 }
 .ornament.type-polka {
-  height: 7%;
+  height: 6%;
   margin-left: -3%;
   width: initial;
 }
@@ -250,18 +254,20 @@ a {
   background: url("../images/pynt-list-polka.png") no-repeat right;
   padding-right: 17px;
 }
+.julklappen {
+  margin-top: 50px;
+}
 .julklappen img {
   width: 100%;
   max-width: 300px;
-  margin-top: 50px;
 }
 #juldeko-1 {
-  background: url("../images/deco-1.png") no-repeat 0;
-  background-size: 160px 250px;
+  background: url("../images/deco-2.png") no-repeat right;
+  background-size: 103px 250px;
   position: absolute;
-  top: 0;
-  right: 20px;
-  width: 160px;
+  top: -30px;
+  right: 0px;
+  width: 103px;
   height: 250px;
 }
 #tack-till {
@@ -334,11 +340,11 @@ a {
     padding: 30px 30px 20px 30px;
   }
   #juldeko-1 {
-    background: url("../images/deco-1.png") no-repeat top right;
-    background-size: 100px;
-    top: -15px;
-    right: 0;
-    width: 100px;
+    background: url("../images/deco-mobile.png") no-repeat top right;
+    background-size: 60px;
+    top: -100px;
+    right: -10px;
+    width: 80px;
   }
   .julpynt {
     width: 80%;
