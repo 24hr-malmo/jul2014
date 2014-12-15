@@ -41,31 +41,39 @@ gulp.task('start', function() {
 gulp.task('sms', function() {
 
 
-    var server = require('./lib/');
-    server.start(function() {
- 
+    //var server = require('./lib/');
+    //server.start(function() {
+
     var amount = gutil.env.amount || 10;
 
     var amountList = [];
-    for(var i = 0; i < amount; i++){ 
+    for(var i = 0; i < amount; i++){
         amountList.push(1);
     }
 
+    var ornaments = ['kula1', 'ljus', 'kula2', 'polka'];
     async.eachSeries(amountList, function(item, next) {
 
-        gutil.log('try to send one');    
-        request.post('http://localhost:8787/46elks/sms', {form: {from:'+46707776018', message: 'foo'}}, function(err) {
+        gutil.log('try to send one');
+        var ornament = ornaments[Math.round(Math.random() * 3)];
+
+        request.post('http://sms.tq.24hr.se/46elks/sms', {form: {from:'+46707776018', message: ornament}}, function(err) {
+
+//        request.post('http://localhost:8787/46elks/sms', {form: {from:'+46707776018', message: ornament}}, function(err) {
 
             gutil.log('done!');
-            next(err);
+            setTimeout(function() {
+                next(err);
+            }, 100);
+
         });
 
     }, function(err) {
         if (err) gutil.log(err);
-        //process.exit();                
+        //process.exit();
     });
 
-    });
+    //});
 });
 
 
@@ -82,7 +90,7 @@ gulp.task('config', function() {
         if (exists) {
             fs.createReadStream('./configs/' + environment + '.js')
             .pipe(fs.createWriteStream('./config.js'));
-            gutil.log('Front config in enviroment "' + environment + '" copied.'); 
+            gutil.log('Front config in enviroment "' + environment + '" copied.');
         }
     });
 
@@ -92,7 +100,7 @@ gulp.task('config', function() {
         if (exists) {
             fs.createReadStream('./goals-glue/configs/' + environment + '.js')
             .pipe(fs.createWriteStream('./goals-glue/config.js'));
-            gutil.log('Glue config in enviroment "' + environment + '" copied.'); 
+            gutil.log('Glue config in enviroment "' + environment + '" copied.');
         }
     });
 
