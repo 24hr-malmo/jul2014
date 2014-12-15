@@ -5,28 +5,52 @@
     <title>24HR JUL 2014</title>
     <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Playfair+Display:700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-
+    <div id="block-header-mobile">
+            <h1>God Jul &amp;<br/>Gott Nytt År!</h1>
+            <p class="intro">Önskar vännerna på 24HR i Malmö</p>
+        </div>
     <div class="box">
 
-        <div class="instructions">
-            <h1>24HR Jul</h1>
-            <div class="intro">
-                SMSa 
-                <a href="sms:+46766861487?body=foo">foo</a>,
-                <a href="sms:+46766861487?body=bar">bar</a>,
-                <a href="sms:+46766861487?body=baq">baq</a> eller 
-                <a href="sms:+46766861487?body=baz">baz</a>
-                till
-                <a href="sms:+46766861487" class="no-wrap">076-686 14 87</a>.
+        <div id="treeWrapper">
+            <div class="tree-center">
+                <div id="tree">
+                    <img class="christmas-tree" src="/assets/images/julgran.png" alt="julgran" />
+                </div>
             </div>
         </div>
 
-        <div id="tree">
-            <img class="christmas-tree" src="/assets/images/realtree.png" alt="julgran" />
+        <div class="instructions">
+            <div id="block-header">
+                <h1>God Jul &amp; Gott Nytt År!</h1>
+                <p class="intro">Önskar vännerna på 24HR i Malmö</p>
+            </div>
+
+            <div class="pyntagranen">
+                <h2>Hjälp oss att klä granen!</h2>
+                <p>Så här enkelt är det. Välj det julpynt du vill ha i granen och SMS’a det till <a href="sms:+46766861487" class="no-wrap">076-686 14 87</a>:</p>
+
+                <div class="julpynt clearfix">
+                    <a class="julgran-pynt-kula-1" href="sms:+46766861487?body=foo">Rödkula</a>
+                    <a class="julgran-pynt-ljus" href="sms:+46766861487?body=bar">Ljus</a>
+                    <a class="julgran-pynt-kula-2" href="sms:+46766861487?body=baq">Blåkula</a>
+                    <a class="julgran-pynt-polka" href="sms:+46766861487?message=baz">Polka</a>
+                </div>
+
+                <p>Håll sedan ögonen på granen så ser du när det ditt pynt poppar upp. Ditt namn hämtar vi automatiskt (om du inte har anonymt nummer) och det visas om du håller pekaren över ditt julpynt. Magi :-)</p>
+            </div>
+
+            <div class="julklappen">
+                <img src="/assets/images/barncancerfonden-jul-2014.jpg"/>
+                <p>I år stödjer vi Barncancerfonden med en slant.</p>
+            </div>
+            <div id="juldeko-1"></div>
         </div>
+
+
 
         <div id="tack-till" class="flex-center">
             <h2>Tack till:</h2>
@@ -40,13 +64,13 @@
     </div>
 
     <div id="ornament-templates">
-        <div data-ornament-type="foo"><img src="http://www.sweetshimas.com/myfiles/image/PSP%20TUBES/PSP%20WINTER%20CHRISTMAS/ornament-green.png" alt="ornament 1" /></div,>
-        <div data-ornament-type="bar"><img src="http://www.sweetshimas.com/myfiles/image/PSP%20TUBES/PSP%20WINTER%20CHRISTMAS/ornament-green.png" alt="ornament 1" /></div,>
-        <div data-ornament-type="baq"><img src="http://www.sweetshimas.com/myfiles/image/PSP%20TUBES/PSP%20WINTER%20CHRISTMAS/ornament-green.png" alt="ornament 1" /></div,>
-        <div data-ornament-type="baz"><img src="http://www.sweetshimas.com/myfiles/image/PSP%20TUBES/PSP%20WINTER%20CHRISTMAS/ornament-green.png" alt="ornament 1" /></div,>
+        <div data-ornament-type="foo"><img src="/assets/images/pynt-list-kula-1@2x.png" alt="ornament 1" /></div,>
+        <div data-ornament-type="bar"><img src="/assets/images/pynt-list-ljus.png" alt="ornament 1" /></div,>
+        <div data-ornament-type="baq"><img src="/assets/images/pynt-list-kula-2@2x.png" alt="ornament 1" /></div,>
+        <div data-ornament-type="baz"><img src="/assets/images/pynt-list-polka-1@2x.png" alt="ornament 1" /></div,>
     </div>
 
-    <script data-main="/scripts/bootstrap-main" src="/scripts/lib/require.js"></script>    
+    <script data-main="/scripts/bootstrap-main" src="/scripts/lib/require.js"></script>
 
 </body>
 </html>

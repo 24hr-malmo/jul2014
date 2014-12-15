@@ -1,36 +1,50 @@
 christmasRed = rgb(235,50,50)
 christmasGreen = rgb(60,141,13)
-
-body
-    font-size 62.5%
-    line-height 1.5rem
-    -webkit-font-smoothing antialiased
+html
+    font-size 100%
     height 100%
-    background-color christmasRed
+body
+    line-height 1.5rem
+    font-smoothing antialiased
+    height 100%
+    background-color #1B1E22
     margin 0
     padding 0
-    font-family sans-serif
-
-.box    
+    font-family 'Source Sans Pro', sans-serif
+    font-size 1.063rem
+    font-weight 400
     display flex
-    padding 2rem 2rem
-    padding-left 4rem
 
 a
     color rgba(255, 255, 255, .6)
     text-decoration none
 
 h1
-    font-size 6rem
-    line-height 6.2rem
+    font-size 4rem
+    line-height 1.2em
     padding 0
     margin 0
-    color christmasGreen
+    color white
+    font-family 'Playfair Display', serif
 
 h2
-    padding-top 1rem
-    line-height 2.2rem
-    font-size 1.8rem
+    font-weight 700
+    margin .5em 0
+    line-height 1.2em
+    font-size 1.5rem
+
+p
+    margin .3em 0
+    color #A0A0A0
+    line-height 1.3em
+
+    &.intro
+        padding-top 1rem
+        font-size 1.5rem
+        color white
+
+a
+    color white
 
 .name
     font-size 1rem
@@ -41,49 +55,55 @@ h2
     justify-content center
     text-align center
 
-#tack-till
-    display none 
-    ul
-        list-style none
-        padding 0
-        margin 0
-        li
-            font-size 1.4rem
-            padding-bottom .5rem
-            line-height 1.6rem
-.intro
-    padding-top 1rem
-    line-height 2.2rem
-    font-size 1.8rem
-
 .no-wrap
     white-space nowrap
 
-.instructions
-    flex .5
-    color white
-    font-weight bold
-    font-size 1.4rem
-    line-height 1.6rem
-    padding 0 1rem 1rem 0
-    justify-content center
+.clearfix
+  overflow auto
+  zoom 1
+
+
+
+
+.box
     display flex
+    flex 1
+
+
+
+//  ********    Julgranen   *****************************************************************************  //
+
+
+#treeWrapper
+    padding 30px 30px 0 30px
+    box-sizing border-box
+    display flex
+    flex 1
+    justify-content center
+    align-items center
     flex-direction column
+    background url(../images/bg3.png)
+
+.tree-center
+    display flex
+    justify-content center
+    align-items center
 
 #tree
-    flex 1
     position relative
-    max-width 400px
+    max-width 700px
+    flex 1
 
 .christmas-tree
     width 100%
+
 
 #ornament-templates
     display none
 
 .ornament
     opacity 0
-    transition opacity .5s ease-out 
+    transition opacity .5s ease-out
     position absolute
     width 8%
     margin-left -4%
@@ -92,9 +112,10 @@ h2
 .ornament-active
     opacity 1
 
+
 .bubble
-    transition opacity .2s ease-out 
-    opacity 0 
+    transition opacity .2s ease-out
+    opacity 0
     position absolute
     top 0
     left 0
@@ -106,22 +127,144 @@ h2
     &.modifier-active
         opacity 1
 
+
+
+
+//  ********    Text Block   *****************************************************************************  //
+
+.instructions
+    min-width 400px
+    max-width 600px
+    padding 80px
+    box-sizing border-box
+    color white
+    line-height 1.6rem
+    flex .5
+    display flex
+    justify-content center
+    flex-direction column
+
+#block-header
+    display block
+#block-header-mobile
+    display none
+
+.pyntagranen
+    margin-top 40px
+
+.julpynt
+    margin 25px 0
+
+    a
+        font-weight 700
+        padding-left 30px
+        padding-right 20px
+        color white
+        float left
+        margin-bottom .5em
+        text-align left
+
+        &.julgran-pynt-kula-1
+            background url(../images/pynt-list-kula-1.png) no-repeat
+        &.julgran-pynt-kula-2
+            background url(../images/pynt-list-kula-2.png) no-repeat
+        &.julgran-pynt-ljus
+            background url(../images/pynt-list-ljus.png) no-repeat
+            padding-left 16px
+        &.julgran-pynt-polka
+            background url(../images/pynt-list-polka.png) no-repeat
+            padding-left 16px
+
+.julklappen
+    img
+        width 100%
+        max-width 250px
+        margin-top 50px
+
+#juldeko-1
+    background url(../images/deco-1.png) no-repeat 0
+    background-size 160px 250px
+    position absolute
+    top 0
+    right 20px
+    width 160px
+    height 250px
+
+#tack-till
+    display none
+
+
+
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 700px)
+    body
+        display Block
+        text-align center
+
     .box
         flex-direction column
         justify-content center
-        padding 2rem
 
     h1, .intro
         text-align center
+    h1
+        font-size 2.6rem
 
+    p
+        &.intro
+            font-size 1.2rem
     #tack-till
         display flex
 
-    .instructions 
-        flex 1
+    .instructions
+        padding 25px 50px
+        min-width 320px
+
+    .pyntagranen
+        margin-top 0
 
     *
         outline none
+        box-sizing border-box
 
+    .tree-center
+    #treeWrapper
+        display Block
+
+    #block-header
+        display none
+    #block-header-mobile
+        display block
+        padding 20px 30px
+
+    #juldeko-1
+        background url(../images/deco-1.png) no-repeat top right
+        background-size 100px
+        top -15px
+        right 0
+        width 100px
+
+    .julpynt
+        a
+            &.julgran-pynt-kula-1
+            &.julgran-pynt-kula-2
+            &.julgran-pynt-ljus
+            &.julgran-pynt-polka
+                padding-left 15px
+                width 50%
+                box-sizing border-box
+            &.julgran-pynt-kula-1
+            &.julgran-pynt-kula-2
+                padding-left 30px
+
+    #tack-till
+        display flex
+        color white
+        ul
+            list-style none
+            padding 0
+            margin 0
+            li
+                font-size 1rem
+                padding-bottom .5rem
+                line-height 1.6rem
