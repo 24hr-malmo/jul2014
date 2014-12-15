@@ -66,8 +66,8 @@ define([ 'socket' ],function(socket) {
 
                 ornamentDom.classList.add('ornament');
                 ornamentDom.classList.add('type-' + ornament.type);
-                ornamentDom.style.top = (ornament.yPercent / 1.2 + 0.1) * 100 + '%';
-                ornamentDom.style.left = (ornament.xPercent / 1.2 + 0.1) * 100 + '%';
+                ornamentDom.style.top = (ornament.yPercent) * 100 + '%';
+                ornamentDom.style.left = (ornament.xPercent) * 100 + '%';
                 container.appendChild(ornamentDom);
 
 
@@ -98,7 +98,7 @@ define([ 'socket' ],function(socket) {
 
             }
 
-        }, index * 50);
+        }, index * 0);
 
     }
 

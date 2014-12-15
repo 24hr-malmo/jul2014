@@ -40,13 +40,18 @@ gulp.task('start', function() {
 
 gulp.task('sms', function() {
 
+    var server = require('./lib/');
+    var db = require('./lib/db');
+    var ornamentsControl = require('./lib/controls/ornaments');
 
-    //var server = require('./lib/');
-    //server.start(function() {
+    server.start(function() {
+
+        db.del('ornaments', function(err) {
 
     var amount = gutil.env.amount || 10;
 
     var amountList = [];
+
     for(var i = 0; i < amount; i++){
         amountList.push(1);
     }
@@ -54,26 +59,25 @@ gulp.task('sms', function() {
     var ornaments = ['kula1', 'ljus', 'kula2', 'polka'];
     async.eachSeries(amountList, function(item, next) {
 
-        gutil.log('try to send one');
+        //gutil.log('try to send one');
         var ornament = ornaments[Math.round(Math.random() * 3)];
 
-        request.post('http://sms.tq.24hr.se/46elks/sms', {form: {from:'+46707776018', message: ornament}}, function(err) {
+        ornamentsControl.add({ name: 'foo bar', type: ornament }).then(function() {
 
-//        request.post('http://localhost:8787/46elks/sms', {form: {from:'+46707776018', message: ornament}}, function(err) {
-
-            gutil.log('done!');
             setTimeout(function() {
                 next(err);
-            }, 100);
+            }, 1);
 
         });
 
     }, function(err) {
         if (err) gutil.log(err);
+            gutil.log('done!');
         //process.exit();
     });
 
-    //});
+    });
+    });
 });
 
 

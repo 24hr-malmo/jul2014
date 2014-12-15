@@ -153,24 +153,29 @@ a {
   -webkit-transition: opacity 0.5s ease-out;
           transition: opacity 0.5s ease-out;
   position: absolute;
-  width: 8%;
-  margin-left: -4%;
-  margin-top: -4%;
-}
-.ornament.type-ljus {
-  height: 7%;
-  margin-top: -7%;
-  width: initial;
-}
-.ornament.type-polka {
-  height: 7%;
-  margin-left: -3%;
-  width: initial;
-}
-.ornament.type-kula1,
-.ornament.type-kula2 {
-  width: 6%;
-  margin-left: -3%;
+  background-color: #fff;
+  width: 1%;
+/*
+    width 8%
+    margin-left -4%
+    margin-top -4%
+
+    &.type-ljus
+        height 7%
+        margin-top -7%
+        width initial
+        //background-color white
+    &.type-polka
+        height 7%
+        margin-left -3%
+        width initial
+        //background-color white
+    &.type-kula1
+    &.type-kula2
+        width 6%
+        margin-left -3%
+        //background-color white
+        */
 }
 .ornament-active {
   opacity: 1;
