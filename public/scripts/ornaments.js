@@ -1,6 +1,6 @@
 define([ 'socket' ],function(socket) {
 
-    var container;
+    var container, hideTimeout;
     var bubbleActive = false;
     var isTouch = (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
 
@@ -18,6 +18,7 @@ define([ 'socket' ],function(socket) {
 
     function showBubble(ornament) {
         bubbleDom.querySelector('[data-name]').innerHTML = ornament.name;
+        bubbleDom.style.display = 'block';
         bubbleDom.classList.add('modifier-active');
         bubbleActive = true;
     }
@@ -26,6 +27,11 @@ define([ 'socket' ],function(socket) {
         bubbleDom.classList.remove('modifier-active');
         bubbleActive = false;
 
+        clearTimeout(hideTimeout);
+        hideTimeout = setTimeout(function() {
+            bubbleDom.style.display = 'none';
+        }, 300);
+
     }
 
 
@@ -33,9 +39,11 @@ define([ 'socket' ],function(socket) {
 
     document.addEventListener('mousemove', function(e) {
 
-        var delta = 10;
-        bubbleDom.style.top = (e.pageY + delta) + 'px';
-        bubbleDom.style.left = (e.pageX + delta) + 'px';
+        if (bubbleActive) {
+            var delta = 10;
+            bubbleDom.style.top = (e.pageY + delta) + 'px';
+            bubbleDom.style.left = (e.pageX + delta) + 'px';
+        }
 
     }, false);
 
@@ -82,12 +90,12 @@ define([ 'socket' ],function(socket) {
                     }, false);
 
                 } else {
-/*
-                    ornamentDom.addEventListener('touchstart', function() {
-                        showBubble(ornament);
-                        setTimeout(hideBubble, 5000);
-                    }, false);
-                   */
+                    /*
+                       ornamentDom.addEventListener('touchstart', function() {
+                       showBubble(ornament);
+                       setTimeout(hideBubble, 5000);
+                       }, false);
+                       */
 
                 }
 
