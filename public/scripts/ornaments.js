@@ -119,11 +119,11 @@ define([ 'socket' ],function(socket) {
     socket.emit('ornaments.load');
 
     socket.on('ornaments.list', function(data) {
-        renderList(data.list);         
+        renderList(data.list);
     });
 
     socket.on('ornament.added', function(data) {
-        render(data);         
+        render(data);
     });
 
 
