@@ -10,3 +10,4 @@ exports.log = {
     level: 'warn'
 };
 
+exports.serviceName = "jul-sms-dev";
