@@ -1,0 +1,22 @@
+
+
+#treeWrapper {
+  float: left;
+  width: 50%;
+}
+
+.instructions {
+  float: left;
+  width: 45%;
+}
+
+
+.pyntagranen,
+#block-header
+{
+  display: none;
+}
+
+#legacybrowsers {
+  display: block;
+}
