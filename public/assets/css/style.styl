@@ -7,7 +7,8 @@ body
     -webkit-font-smoothing antialiased
     //height 100%
     min-height 100%
-    background-color #1B1E22
+
+    background url(../images/bg3.png)
     margin 0
     padding 0
     font-family 'Source Sans Pro', sans-serif
@@ -91,7 +92,7 @@ a
     justify-content center
     align-items center
     flex-direction column
-    background url(../images/bg3.png)
+    //background url(../images/bg3.png)
     display block
 
 #treeWrapper
@@ -102,14 +103,16 @@ a
 
 
 .tree-center
+    align-items center
     display flex
     justify-content center
-    align-items center
+    width 100%
 
 #tree
     position relative
     max-width 600px
-    flex 1
+    width 100%
+    //flex 1
 
 .christmas-tree
     width 100%
@@ -174,7 +177,8 @@ a
 .instructions
     min-width 400px
     max-width 500px
-    padding 80px
+    padding 80px 5%
+    background-color #1B1E22
     box-sizing border-box
     color white
     line-height 1.6rem
@@ -185,6 +189,7 @@ a
 #block-header
     display block
 #block-header-mobile
+    background-color #1B1E22
     display none
 
 .pyntagranen
@@ -220,6 +225,7 @@ a
 .julklappen
     margin-top 50px
     img
+        width 100%
         max-width 350px
 
 
@@ -249,16 +255,7 @@ a
         //justify-content center
         /* autoprefixer: off */
         display block
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
+
 
 
     h1, .intro
@@ -286,6 +283,7 @@ a
     .instructions
         padding 25px 30px
         min-width 320px
+        max-width 100%
 
 
     .pyntagranen

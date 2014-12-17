@@ -6,7 +6,7 @@
 }
 
 .instructions {
-  float: left;
+  float: right;
   width: 45%;
 }
 
@@ -20,3 +20,9 @@
 #legacybrowsers {
   display: block;
 }
+
+.block-header-mobile {
+  display: none;
+}
+
+@media only screen and (max-width : 700px)

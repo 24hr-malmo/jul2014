@@ -6,7 +6,7 @@ body {
   line-height: 1.5rem;
   -webkit-font-smoothing: antialiased;
   min-height: 100%;
-  background-color: #1b1e22;
+  background: url("../images/bg3.png");
   margin: 0;
   padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
@@ -119,7 +119,6 @@ a {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: url("../images/bg3.png");
   display: block;
 }
 #treeWrapper {
@@ -129,6 +128,10 @@ a {
   display: flex;
 }
 .tree-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -137,18 +140,12 @@ a {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100%;
 }
 #tree {
   position: relative;
   max-width: 600px;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  width: 100%;
 }
 .christmas-tree {
   width: 100%;
@@ -206,7 +203,8 @@ a {
 .instructions {
   min-width: 400px;
   max-width: 500px;
-  padding: 80px;
+  padding: 80px 5%;
+  background-color: #1b1e22;
   box-sizing: border-box;
   color: #fff;
   line-height: 1.6rem;
@@ -228,6 +226,7 @@ a {
   display: block;
 }
 #block-header-mobile {
+  background-color: #1b1e22;
   display: none;
 }
 .pyntagranen {
@@ -265,6 +264,7 @@ a {
   margin-top: 50px;
 }
 .julklappen img {
+  width: 100%;
   max-width: 350px;
 }
 #juldeko-1 {
@@ -291,16 +291,6 @@ a {
   .box {
 /* autoprefixer: off */
     display: block;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
   }
   h1,
   .intro {
@@ -332,6 +322,7 @@ a {
   .instructions {
     padding: 25px 30px;
     min-width: 320px;
+    max-width: 100%;
   }
   .pyntagranen {
     margin-top: 0;
